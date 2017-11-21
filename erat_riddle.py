@@ -14,16 +14,16 @@ def pretty_string(*args):
     return result
 
 def riddle(x,y,z,t,summ):
-  i = 0 
-  for xi in range(1000/x):
-    for yi in range(1000/y):
-      for zi in range(1000/z):
-        for ti in range(1000/t):
-          if (x*xi + y*yi + z*zi + t*ti) == summ:
-            print pretty_string(x,"x",xi,"+",y,"x",yi,"+",z,"x",zi,"+",t,"x",ti,"=",summ)
-            i += 1
-  if i == 0:
-    print "No solution"
+    i = 0 
+    for xi in range(1000/x):
+        for yi in range(1000/y):
+           for zi in range(1000/z):
+               for ti in range(1000/t):
+                   if (x*xi + y*yi + z*zi + t*ti) == summ:
+                       print pretty_string(x,"x",xi,"+",y,"x",yi,"+",z,"x",zi,"+",t,"x",ti,"=",summ)
+                       i += 1
+    if i == 0:
+        print "No solution"
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
