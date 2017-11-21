@@ -5,6 +5,14 @@ M=23
 L=59
 K=271
 
+def pretty_string(*args):
+    result=""
+    for arg in args:
+        if arg in ["+","="]:
+            arg = " "+arg+" "
+        result += str(arg)
+    return result
+
 def riddle(x,y,z,t,summ):
   i = 0 
   for xi in range(1000/x):
@@ -12,7 +20,7 @@ def riddle(x,y,z,t,summ):
       for zi in range(1000/z):
         for ti in range(1000/t):
           if (x*xi + y*yi + z*zi + t*ti) == summ:
-            print str(x) + "x" + str(xi) + " + " + str(y) + "x" + str(yi) + " + " + str(z) + "x" + str(zi) + " + " + str(t) + "x" + str(ti) + " = " + str(summ)
+            print pretty_string(x,"x",xi,"+",y,"x",yi,"+",z,"x",zi,"+",t,"x",ti,"=",summ)
             i += 1
   if i == 0:
     print "No solution"
